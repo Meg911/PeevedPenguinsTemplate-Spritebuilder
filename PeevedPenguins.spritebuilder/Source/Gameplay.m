@@ -31,17 +31,17 @@
 
 - (void)launchPenguin {
     // loads the Penguin.ccb we have set up in Spritebuilder
-    CCNode* Penguin = [CCBReader load:@"Penguin"];
+    CCNode* penguin = [CCBReader load:@"Penguin"];
     // position the penguin at the bowl of the catapult
-    Penguin.position = ccpAdd(_catapultArm.position, ccp(16, 50));
+    penguin.position = ccpAdd(_catapultArm.position, ccp(16, 50));
     
     // add the penguin to the physicsNode of this scene (because it has physics enabled)
-    [_physicsNode addChild:Penguin];
+    [_physicsNode addChild:penguin];
     
     // manually create & apply a force to launch the penguin
     CGPoint launchDirection = ccp(1, 0);
     CGPoint force = ccpMult(launchDirection, 8000);
-    [Penguin.physicsBody applyForce:force];
+    [penguin.physicsBody applyForce:force];
 }
 
 @end
