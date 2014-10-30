@@ -448,7 +448,7 @@
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
-						<string></string>
+						<string>Penguin</string>
 						<key>displayName</key>
 						<string>flyingpenguin</string>
 						<key>memberVarAssignmentName</key>
