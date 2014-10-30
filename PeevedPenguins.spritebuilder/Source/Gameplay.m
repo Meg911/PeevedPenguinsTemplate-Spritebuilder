@@ -1,16 +1,16 @@
 //
-//  Gameplay.m
+//  GamePlay.m
 //  PeevedPenguins
 //
 //  Created by Magreth de Graaf on 30/10/2014.
 //  Copyright (c) 2014 Software Rebel. All rights reserved.
 //
 
-#import "Gameplay.h"
+#import "GamePlay.h"
 
 
 
-@implementation Gameplay {
+@implementation GamePlay {
     CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
 }

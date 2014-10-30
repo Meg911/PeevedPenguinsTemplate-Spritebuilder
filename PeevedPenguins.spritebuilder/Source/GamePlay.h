@@ -1,5 +1,5 @@
 //
-//  Gameplay.h
+//  GamePlay.h
 //  PeevedPenguins
 //
 //  Created by Magreth de Graaf on 30/10/2014.
@@ -8,6 +8,6 @@
 
 #import "CCNode.h"
 
-@interface Gameplay : CCNode
+@interface GamePlay : CCNode
 
 @end

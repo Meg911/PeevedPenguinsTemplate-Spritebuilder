@@ -11,8 +11,8 @@
 @implementation MainScene
 //when the user touches the play button the screen transitions to the GamePlay 'Layer' 960x320in size
 - (void)play {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"GamePlay"];
+    CCScene *gamePlayScene = [CCBReader loadAsScene:@"GamePlay"];
     CCLOG(@"play button pressed");
-    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    [[CCDirector sharedDirector] replaceScene:gamePlayScene];
 }
 @end
