@@ -451,10 +451,8 @@
 						<string>Penguin</string>
 						<key>displayName</key>
 						<string>flyingpenguin</string>
-						<key>hidden</key>
-						<true/>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>penguin</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>physicsBody</key>
@@ -564,10 +562,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
-						<key>seqExpanded</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -854,6 +848,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -905,7 +901,7 @@
 			<key>length</key>
 			<real>10</real>
 			<key>name</key>
-			<string>GamePlay</string>
+			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>4.21875</real>
 			<key>position</key>
