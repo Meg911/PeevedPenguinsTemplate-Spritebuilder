@@ -40,21 +40,21 @@
 		<key>children</key>
 		<array/>
 		<key>customClass</key>
-		<string>Penguin</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
-		<string>penguin</string>
+		<string>Penguin</string>
 		<key>memberVarAssignmentType</key>
 		<integer>1</integer>
 		<key>physicsBody</key>
 		<dict>
 			<key>affectedByGravity</key>
-			<false/>
+			<true/>
 			<key>allowsRotation</key>
-			<false/>
+			<true/>
 			<key>bodyShape</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>collisionCategories</key>
 			<array/>
 			<key>collisionMask</key>
@@ -62,7 +62,7 @@
 			<key>collisionType</key>
 			<string></string>
 			<key>cornerRadius</key>
-			<real>0.0</real>
+			<real>13</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
@@ -74,43 +74,12 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
-				</array>
-				<array>
-					<real>0.0</real>
-					<real>25</real>
-				</array>
-				<array>
-					<real>25</real>
-					<real>25</real>
-				</array>
-				<array>
-					<real>25</real>
-					<real>0.0</real>
+					<real>12.5</real>
+					<real>12.5</real>
 				</array>
 			</array>
 			<key>polygons</key>
-			<array>
-				<array>
-					<array>
-						<real>25</real>
-						<real>0.0</real>
-					</array>
-					<array>
-						<real>25</real>
-						<real>25</real>
-					</array>
-					<array>
-						<real>0.0</real>
-						<real>25</real>
-					</array>
-					<array>
-						<real>0.0</real>
-						<real>0.0</real>
-					</array>
-				</array>
-			</array>
+			<array/>
 		</dict>
 		<key>properties</key>
 		<array>
@@ -185,8 +154,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
