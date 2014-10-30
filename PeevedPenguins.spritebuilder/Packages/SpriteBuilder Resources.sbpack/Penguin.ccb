@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>flyingpenguin</string>
 				<key>memberVarAssignmentName</key>
-				<string>_penguin</string>
+				<string></string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -161,8 +161,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
