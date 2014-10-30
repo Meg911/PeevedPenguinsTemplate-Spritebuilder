@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>18</integer>
+	<integer>19</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -602,7 +602,7 @@
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
-						<string>GamePlay</string>
+						<string></string>
 						<key>displayName</key>
 						<string>CCNode</string>
 						<key>memberVarAssignmentName</key>
@@ -612,9 +612,9 @@
 						<key>physicsBody</key>
 						<dict>
 							<key>affectedByGravity</key>
-							<true/>
+							<false/>
 							<key>allowsRotation</key>
-							<true/>
+							<false/>
 							<key>bodyShape</key>
 							<integer>0</integer>
 							<key>collisionCategories</key>
@@ -628,7 +628,7 @@
 							<key>density</key>
 							<real>1</real>
 							<key>dynamic</key>
-							<false/>
+							<true/>
 							<key>elasticity</key>
 							<real>0.30000001192092896</real>
 							<key>friction</key>
@@ -636,16 +636,16 @@
 							<key>points</key>
 							<array>
 								<array>
-									<real>0.0</real>
-									<real>0.0</real>
+									<real>5</real>
+									<real>-11</real>
 								</array>
 								<array>
-									<real>0.99609375</real>
-									<real>-1</real>
+									<real>3</real>
+									<real>271</real>
 								</array>
 								<array>
-									<real>491.99609375</real>
-									<real>0.0</real>
+									<real>493</real>
+									<real>266</real>
 								</array>
 								<array>
 									<real>490</real>
@@ -656,16 +656,20 @@
 							<array>
 								<array>
 									<array>
-										<real>0.0</real>
+										<real>490</real>
 										<real>0.0</real>
 									</array>
 									<array>
-										<real>0.99609375</real>
-										<real>-1</real>
+										<real>493</real>
+										<real>266</real>
 									</array>
 									<array>
-										<real>491.99609375</real>
-										<real>0.0</real>
+										<real>3</real>
+										<real>271</real>
+									</array>
+									<array>
+										<real>5</real>
+										<real>-11</real>
 									</array>
 								</array>
 							</array>
@@ -735,92 +739,19 @@
 					</dict>
 					<dict>
 						<key>UUID</key>
-						<integer>14</integer>
+						<integer>18</integer>
 						<key>baseClass</key>
-						<string>CCBFile</string>
+						<string>CCSprite</string>
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>CCBFile</string>
+						<string>flyingpenguin</string>
 						<key>memberVarAssignmentName</key>
 						<string>penguin</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
-						<key>physicsBody</key>
-						<dict>
-							<key>affectedByGravity</key>
-							<true/>
-							<key>allowsRotation</key>
-							<true/>
-							<key>bodyShape</key>
-							<integer>0</integer>
-							<key>collisionCategories</key>
-							<array/>
-							<key>collisionMask</key>
-							<array/>
-							<key>collisionType</key>
-							<string></string>
-							<key>cornerRadius</key>
-							<real>0.0</real>
-							<key>density</key>
-							<real>1</real>
-							<key>dynamic</key>
-							<true/>
-							<key>elasticity</key>
-							<real>0.30000001192092896</real>
-							<key>friction</key>
-							<real>0.30000001192092896</real>
-							<key>points</key>
-							<array>
-								<array>
-									<real>-3.00390625</real>
-									<real>-12</real>
-								</array>
-								<array>
-									<real>-7.00390625</real>
-									<real>5</real>
-								</array>
-								<array>
-									<real>7.99609375</real>
-									<real>13</real>
-								</array>
-								<array>
-									<real>15.99609375</real>
-									<real>-2</real>
-								</array>
-								<array>
-									<real>-1.00390625</real>
-									<real>-12</real>
-								</array>
-							</array>
-							<key>polygons</key>
-							<array>
-								<array>
-									<array>
-										<real>-1.00390625</real>
-										<real>-12</real>
-									</array>
-									<array>
-										<real>15.99609375</real>
-										<real>-2</real>
-									</array>
-									<array>
-										<real>7.99609375</real>
-										<real>13</real>
-									</array>
-									<array>
-										<real>-7.00390625</real>
-										<real>5</real>
-									</array>
-									<array>
-										<real>-3.00390625</real>
-										<real>-12</real>
-									</array>
-								</array>
-							</array>
-						</dict>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -838,11 +769,22 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>8</real>
-									<real>-9</real>
+									<real>0.0</real>
+									<real>0.0</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
 								</array>
 							</dict>
 							<dict>
@@ -860,11 +802,27 @@
 							</dict>
 							<dict>
 								<key>name</key>
-								<string>ccbFile</string>
+								<string>spriteFrame</string>
 								<key>type</key>
-								<string>CCBFile</string>
+								<string>SpriteFrame</string>
 								<key>value</key>
-								<string>Penguin.ccb</string>
+								<array>
+									<string></string>
+									<string>PeevedPenguinsAssets/flyingpenguin.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+								</array>
 							</dict>
 						</array>
 						<key>selected</key>
