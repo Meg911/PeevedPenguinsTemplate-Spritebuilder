@@ -452,7 +452,7 @@
 						<key>displayName</key>
 						<string>flyingpenguin</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>penguin</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>physicsBody</key>
