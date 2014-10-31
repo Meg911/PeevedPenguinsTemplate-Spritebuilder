@@ -517,6 +517,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>seqExpanded</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -671,6 +673,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>seqExpanded</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -684,7 +688,7 @@
 						<key>displayName</key>
 						<string>CCBFile</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>Penguin</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>physicsBody</key>
@@ -800,6 +804,8 @@
 						</array>
 						<key>selected</key>
 						<true/>
+						<key>seqExpanded</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -891,6 +897,8 @@
 						<real>0.5</real>
 					</dict>
 				</array>
+				<key>seqExpanded</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
