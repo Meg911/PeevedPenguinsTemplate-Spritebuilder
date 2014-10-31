@@ -7,8 +7,8 @@
 //
 
 #import "GamePlay.h"
-
-
+#import "Penguin.h"
+#import "Seal.h"
 
 @implementation GamePlay {
     CCPhysicsNode *_physicsNode;
