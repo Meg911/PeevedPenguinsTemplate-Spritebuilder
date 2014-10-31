@@ -44,7 +44,7 @@
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
-		<string>Penguin</string>
+		<string>penguin</string>
 		<key>memberVarAssignmentType</key>
 		<integer>1</integer>
 		<key>physicsBody</key>
@@ -154,6 +154,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

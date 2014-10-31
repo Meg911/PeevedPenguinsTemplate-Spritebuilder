@@ -442,17 +442,17 @@
 				<array>
 					<dict>
 						<key>UUID</key>
-						<integer>20</integer>
+						<integer>13</integer>
 						<key>baseClass</key>
-						<string>CCBFile</string>
+						<string>CCNode</string>
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>CCBFile</string>
+						<string>CCNode</string>
 						<key>memberVarAssignmentName</key>
-						<string>Penguin</string>
+						<string>_levelNode</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -472,11 +472,35 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-12</real>
-									<real>-10</real>
+									<real>469</real>
+									<real>47</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>contentSize</string>
+								<key>type</key>
+								<string>Size</string>
+								<key>value</key>
+								<array>
+									<real>490</real>
+									<real>275</real>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.0</real>
+									<real>0.0</real>
 								</array>
 							</dict>
 							<dict>
@@ -491,14 +515,6 @@
 									<false/>
 									<integer>0</integer>
 								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>ccbFile</string>
-								<key>type</key>
-								<string>CCBFile</string>
-								<key>value</key>
-								<string>Penguin.ccb</string>
 							</dict>
 						</array>
 						<key>selected</key>
@@ -660,17 +676,17 @@
 					</dict>
 					<dict>
 						<key>UUID</key>
-						<integer>13</integer>
+						<integer>20</integer>
 						<key>baseClass</key>
-						<string>CCNode</string>
+						<string>CCBFile</string>
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>CCNode</string>
+						<string>CCBFile</string>
 						<key>memberVarAssignmentName</key>
-						<string>_levelNode</string>
+						<string>_penguin</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -690,35 +706,11 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>204</real>
-									<real>-197</real>
+									<real>-12</real>
+									<real>-10</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>contentSize</string>
-								<key>type</key>
-								<string>Size</string>
-								<key>value</key>
-								<array>
-									<real>490</real>
-									<real>275</real>
-									<integer>0</integer>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>anchorPoint</string>
-								<key>type</key>
-								<string>Point</string>
-								<key>value</key>
-								<array>
-									<real>0.0</real>
-									<real>0.0</real>
 								</array>
 							</dict>
 							<dict>
@@ -733,6 +725,14 @@
 									<false/>
 									<integer>0</integer>
 								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ccbFile</string>
+								<key>type</key>
+								<string>CCBFile</string>
+								<key>value</key>
+								<string>Penguin.ccb</string>
 							</dict>
 						</array>
 					</dict>
