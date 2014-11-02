@@ -10,10 +10,12 @@
 #import "Penguin.h"
 #import "Seal.h"
 
+
 @implementation GamePlay {
-    CCPhysicsNode *_physicsNode;
-    CCNode *_catapultArm;
-    CCNode *_levelNode;
+    CCPhysicsNode * _physicsNode;
+    CCNode * _catapultArm;
+    CCNode * _levelNode;
+    CCNode * penguin;
 }
 
 // is called when CCB file has completed loading
