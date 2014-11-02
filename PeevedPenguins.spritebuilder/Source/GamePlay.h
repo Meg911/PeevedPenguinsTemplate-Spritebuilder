@@ -9,5 +9,6 @@
 #import "CCNode.h"
 
 @interface GamePlay : CCNode
+@property CCNode* Penguin;
 
 @end
