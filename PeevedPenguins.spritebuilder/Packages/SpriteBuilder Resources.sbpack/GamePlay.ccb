@@ -472,8 +472,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>211</real>
-									<real>-206</real>
+									<real>468</real>
+									<real>45</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -617,8 +617,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>224</real>
-									<real>-210</real>
+									<real>0.0</real>
+									<real>0.0</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -631,8 +631,8 @@
 								<string>Point</string>
 								<key>value</key>
 								<array>
-									<real>0.5</real>
-									<real>0.5</real>
+									<real>0.0</real>
+									<real>0.0</real>
 								</array>
 							</dict>
 							<dict>
@@ -771,8 +771,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-12</real>
-									<real>-10</real>
+									<real>245</real>
+									<real>222</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -800,6 +800,8 @@
 								<string>Penguin.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -829,8 +831,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>257</real>
-							<real>240</real>
+							<real>0.0</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -898,7 +900,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>GamePlay</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -967,8 +969,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
