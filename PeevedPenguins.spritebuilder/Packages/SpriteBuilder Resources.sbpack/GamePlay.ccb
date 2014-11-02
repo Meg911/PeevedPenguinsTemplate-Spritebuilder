@@ -472,8 +472,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>469</real>
-									<real>47</real>
+									<real>211</real>
+									<real>-206</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -517,8 +517,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -675,8 +673,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>seqExpanded</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -690,7 +686,7 @@
 						<key>displayName</key>
 						<string>CCBFile</string>
 						<key>memberVarAssignmentName</key>
-						<string>_penguin</string>
+						<string>penguin</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>physicsBody</key>
@@ -804,6 +800,8 @@
 								<string>Penguin.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
