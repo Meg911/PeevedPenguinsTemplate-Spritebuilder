@@ -517,6 +517,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -688,7 +690,7 @@
 						<key>displayName</key>
 						<string>CCBFile</string>
 						<key>memberVarAssignmentName</key>
-						<string>Penguin</string>
+						<string>_penguin</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>physicsBody</key>
@@ -802,8 +804,6 @@
 								<string>Penguin.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>

@@ -12,7 +12,6 @@
 
 @implementation GamePlay {
     CCPhysicsNode *_physicsNode;
-    CCSprite *Penguin;
     CCNode *_catapultArm;
     CCNode *_levelNode;
 }
