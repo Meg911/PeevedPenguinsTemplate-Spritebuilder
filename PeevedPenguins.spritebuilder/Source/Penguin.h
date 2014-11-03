@@ -8,7 +8,7 @@
 
 #import "CCSprite.h"
 
-@interface Penguin : CCNode
+@interface Penguin : CCSprite
 
 @property (nonatomic, assign) BOOL launched;
 
