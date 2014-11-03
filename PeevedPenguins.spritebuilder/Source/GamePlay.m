@@ -69,7 +69,7 @@ static const float MIN_SPEED = 5.f;
     
     // start catapult dragging when a touch inside of the catapult arm occurs
     if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
-        if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
+        //if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
             // create a penguin from the ccb-file
             _currentPenguin = [CCBReader load:@"Penguin"];
             // initially position it on the scoop. 34,138 is the position in the node space of the _catapultArm
@@ -232,7 +232,4 @@ static const float MIN_SPEED = 5.f;
         }
     }
 }
-
-
-
 @end
