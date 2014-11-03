@@ -47,7 +47,9 @@
     [penguin.physicsBody applyForce:force];
     //ensure followed object is visible when playing... like being followed by a camera
     self.position = ccp(0,0);
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox]; [self runAction:follow];
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
+  //  [self runAction:follow];
+    [_contentNode runAction:follow];
 }
 -(void) retry{
     //reload the level
