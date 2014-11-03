@@ -11,13 +11,13 @@
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 
-/*@interface GamePlay(){
+@interface GamePlay(){
    //CCSprite *penguin;
    //CCSprite * seal;
     CCNode * penguin;
     CCNode * seal;
 }
-@end*/
+@end
 
 @implementation GamePlay {
     CCPhysicsBody *_physicsBody;
