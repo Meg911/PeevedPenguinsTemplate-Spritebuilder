@@ -55,7 +55,6 @@
     // start catapult dragging when a touch inside of the catapult arm occurs
     if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation))
     {
-        //xxx
         // create a penguin from the ccb-file
         _currentPenguin = [CCBReader load:@"Penguin"];
         // initially position it on the scoop. 34,138 is the position in the node space of the _catapultArm
@@ -90,6 +89,18 @@
         // releases the joint and lets the catapult snap back
         [_mouseJoint invalidate];
         _mouseJoint = nil;
+        
+        // releases the joint and lets the penguin fly
+       
+        [_penguinCatapultJoint invalidate];
+        _penguinCatapultJoint = nil;
+        
+        // after snapping rotation is fine
+        _currentPenguin.physicsBody.allowsRotation = TRUE;
+        
+        // follow the flying penguin
+        CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+        [_contentNode runAction:follow];
     }
 }
 - (void)launchPenguin {
