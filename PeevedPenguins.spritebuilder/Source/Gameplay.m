@@ -13,9 +13,9 @@
 
 
 @interface GamePlay(){
-   CCSprite *penguin;
+   //CCSprite *penguin;
    // CCSprite * seal;
-    //CCNode * penguin;
+    CCNode * penguin;
     CCNode * seal;
 }
 @end
