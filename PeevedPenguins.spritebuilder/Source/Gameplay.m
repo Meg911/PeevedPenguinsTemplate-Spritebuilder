@@ -15,7 +15,7 @@
     CCPhysicsNode * _physicsNode;
     CCNode * _catapultArm;
     CCNode * _levelNode;
-    CCNode * penguin;
+    CCNode* _penguin;
 }
 
 // is called when CCB file has completed loading
