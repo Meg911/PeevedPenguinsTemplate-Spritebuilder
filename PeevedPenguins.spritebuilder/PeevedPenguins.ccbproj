@@ -43,7 +43,7 @@
 	<key>publishEnablediPhone</key>
 	<true/>
 	<key>publishEnvironment</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>publishResolution_android_phone</key>
 	<true/>
 	<key>publishResolution_android_phonehd</key>
@@ -78,6 +78,8 @@
 			<key>previewFolderHidden</key>
 			<true/>
 		</dict>
+		<key>GamePlay.ccbi</key>
+		<dict/>
 		<key>PeevedPenguinsAssets</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>
