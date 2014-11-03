@@ -139,6 +139,8 @@
 					</array>
 				</dict>
 			</array>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>UUID</key>
@@ -1714,8 +1716,6 @@
 						<string>WaitingPenguin.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1778,8 +1778,6 @@
 						<string>WaitingPenguin.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1793,7 +1791,7 @@
 				<key>displayName</key>
 				<string>CCBFile</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_waitingPenguin</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -1842,8 +1840,6 @@
 						<string>WaitingPenguin.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
