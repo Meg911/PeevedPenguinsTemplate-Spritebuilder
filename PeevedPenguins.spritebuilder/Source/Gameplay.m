@@ -13,6 +13,7 @@
 
 
 @implementation GamePlay {
+    CCNode * _contentNode;
     CCPhysicsNode * _physicsNode;
     CCNode * _catapultArm;
     CCNode * _levelNode;
