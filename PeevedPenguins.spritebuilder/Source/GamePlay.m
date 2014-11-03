@@ -208,10 +208,7 @@ static const float MIN_SPEED = 5.f;
   //  [self runAction:follow];
     [_contentNode runAction:follow];
 }
--(void) retry{
-    //reload the level
-    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
-}
+
 #pragma mark - Collision Handling
 
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
