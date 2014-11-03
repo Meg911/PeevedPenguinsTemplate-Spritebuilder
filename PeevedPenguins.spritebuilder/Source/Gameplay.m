@@ -15,7 +15,7 @@
 @interface GamePlay(){
     //CCSprite *penguin;
    // CCSprite * seal;
-    CCNode *penguin;
+    CCNode * penguin;
     CCNode * seal;
 }
 @end
@@ -26,6 +26,8 @@
     CCPhysicsNode * _physicsNode;
     CCNode * _catapultArm;
     CCNode * _levelNode;
+    
+    Penguin *_penguin;
 }
 
 // is called when CCB file has completed loading
