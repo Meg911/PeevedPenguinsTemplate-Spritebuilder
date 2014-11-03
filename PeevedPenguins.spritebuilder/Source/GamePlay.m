@@ -64,7 +64,7 @@ static const float MIN_SPEED = 5.f;
 }
 #pragma mark - Touch Handling
 
-- (void)touchBegan:(CCTouch *)touch withEvent:(UIEvent *)event {
+- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
     // start catapult dragging when a touch inside of the catapult arm occurs
