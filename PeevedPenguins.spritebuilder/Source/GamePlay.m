@@ -60,7 +60,7 @@ static const float MIN_SPEED = 5.f;
 
 - (void)retry {
     // reload this level
-    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
+    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
 }
 #pragma mark - Touch Handling
 
