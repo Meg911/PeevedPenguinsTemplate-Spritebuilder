@@ -27,7 +27,7 @@
     CCNode * _catapultArm;
     CCNode * _levelNode;
     
-    Penguin *_penguin;
+   // Penguin * penguin;
 }
 
 // is called when CCB file has completed loading
