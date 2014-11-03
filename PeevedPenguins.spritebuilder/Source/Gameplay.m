@@ -8,17 +8,16 @@
 
 #import "GamePlay.h"
 #import "Penguin.h"
-#import "Seal.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 
-@interface GamePlay(){
+/*@interface GamePlay(){
    //CCSprite *penguin;
    //CCSprite * seal;
     CCNode * penguin;
     CCNode * seal;
 }
-@end
+@end*/
 
 @implementation GamePlay {
     CCPhysicsBody *_physicsBody;
@@ -31,8 +30,37 @@
     CCPhysicsJoint *_mouseJoint;
     CCNode *_currentPenguin;
     CCPhysicsJoint *_penguinCatapultJoint;
-   }
+    CCAction *_followPenguin;
+}
 
+static const float MIN_SPEED = 5.f;
+
+#pragma mark - Init
+
+// is called when CCB file has completed loading
+- (void)didLoadFromCCB {
+    // nothing shall collide with our invisible nodes
+    _mouseJointNode.physicsBody.collisionMask = @[];
+    _pullbackNode.physicsBody.collisionMask = @[];
+    // tell this scene to accept touches
+    self.userInteractionEnabled = YES;
+    
+    // load a level
+    CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
+    [_levelNode addChild:level];
+    
+    // visualize physic bodies & joints
+    //  _physicsNode.debugDraw = YES;
+    _physicsNode.collisionDelegate = self;
+}
+
+#pragma mark - Game Actions
+
+- (void)retry {
+    // reload this level
+    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
+}
+/*
 // is called when CCB file has completed loading
 - (void)didLoadFromCCB {
     // tell this scene to accept touches
@@ -76,14 +104,48 @@
         // setup a spring joint between the mouseJointNode and the catapultArm
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
     }
-}
-- (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
+}*/
+//- (void)touchMoved:(CCTouch *)touch withEvent:(UIEvent *)event {
+- (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
     // whenever touches move, update the position of the mouseJointNode to the touch position
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     _mouseJointNode.position = touchLocation;
 }
+
+//- (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
+- (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+    // when touches end, release the catapult
+    [self releaseCatapult];
+}
+
+- (void)touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
+    // when touches are cancelled, release the catapult
+    [self releaseCatapult];
+}
 - (void)releaseCatapult {
+    if (_mouseJoint != nil) {
+        // releases the joint and lets the catpult snap back
+        [_mouseJoint invalidate];
+        _mouseJoint = nil;
+        
+        // releases the joint and lets the penguin fly
+        [_penguinCatapultJoint invalidate];
+        _penguinCatapultJoint = nil;
+        
+        // after snapping rotation is fine
+        _currentPenguin.physicsBody.allowsRotation = YES;
+        
+        _currentPenguin.launched = YES;
+        
+        CGRect uiPointsBoundingBox = CGRectMake(0, 0, self.boundingBox.size.width, self.boundingBox.size.height);
+        // follow the flying penguin
+        _followPenguin = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:uiPointsBoundingBox];
+        [_contentNode runAction:_followPenguin];
+    }
+}
+
+
+/*- (void)releaseCatapult {
     if (_mouseJoint != nil)
     {
         // releases the joint and lets the catapult snap back
@@ -102,7 +164,31 @@
         CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
         [_contentNode runAction:follow];
     }
+}*/
+- (void)sealRemoved:(CCNode *)seal {
+    // load particle effect
+    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
+    // place the particle effect on the seals position
+    explosion.position = seal.position;
+    // add the particle effect to the same node the seal is on
+    [seal.parent addChild:explosion];
+    // make the particle effect clean itself up, once it is completed
+    explosion.autoRemoveOnFinish = YES;
+    
+    // finally, remove the destroyed seal
+    [seal removeFromParent];
 }
+
+- (void)nextAttempt {
+    _currentPenguin = nil;
+    [_contentNode stopAction:_followPenguin];
+    _followPenguin = nil;
+    
+    CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
+    [_contentNode runAction:actionMoveTo];
+}
+
+
 - (void)launchPenguin {
     // loads the Penguin.ccb we have set up in Spritebuilder
     CCNode* penguin1 = [CCBReader load:@"Penguin"];
@@ -126,6 +212,49 @@
     //reload the level
     [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
 }
+#pragma mark - Collision Handling
+
+- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
+    float energy = [pair totalKineticEnergy];
+    
+    // if energy is large enough, remove the seal
+    if (energy > 5000.f) {
+        [[_physicsNode space] addPostStepBlock:^{
+            [self sealRemoved:nodeA];
+        } key:nodeA];
+    }
+}
+
+#pragma mark - Update
+
+- (void)update:(CCTime)delta {
+    if (_currentPenguin.launched) {
+        // if speed is below minimum speed, assume this attempt is over
+        if (ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED) {
+            [self nextAttempt];
+            return;
+        }
+        
+        // right corner of penguin
+        int penguinMaxX = _currentPenguin.boundingBox.origin.x + _currentPenguin.boundingBox.size.width;
+        
+        // if right corner of penguin leaves is further left, then the left end of the scene -> next attempt
+        if (penguinMaxX < self.boundingBox.origin.x) {
+            [self nextAttempt];
+            return;
+        }
+        
+        // left conrer of penguin
+        int penguinMinX = _currentPenguin.boundingBox.origin.x;
+        
+        // if left corner of penguin leaves is further right, then the right end of the scene -> next attempt
+        if (penguinMinX > (self.boundingBox.origin.x + self.boundingBox.size.width)) {
+            [self nextAttempt];
+            return;
+        }
+    }
+}
+
 
 
 @end
