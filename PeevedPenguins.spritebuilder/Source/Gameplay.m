@@ -26,6 +26,7 @@
     CCPhysicsNode * _physicsNode;
     CCNode * _catapultArm;
     CCNode * _levelNode;
+    CCNode * _pullbackNode;
     
    // Penguin * penguin;
 }
@@ -37,7 +38,7 @@
     //CCScene *level = [CCBReader load:@"Levels/Level1"];
     CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
     [_levelNode addChild:level];
-    //hvisualise physics bodys and joints
+    //visualise physics bodys and joints for Debugging
     _physicsNode.debugDraw = TRUE;
     
     //nothing will collide with our invisible nodes
