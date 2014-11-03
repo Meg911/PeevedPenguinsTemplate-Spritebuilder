@@ -12,12 +12,20 @@
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 
+@interface GamePlay(){
+    //CCSprite *penguin;
+   // CCSprite * seal;
+    CCNode *penguin;
+    CCNode * seal;
+}
+@end
+
 @implementation GamePlay {
+    CCPhysicsBody *_physicsBody;
     CCNode * _contentNode;
     CCPhysicsNode * _physicsNode;
     CCNode * _catapultArm;
     CCNode * _levelNode;
-    CCNode* _penguin;
 }
 
 // is called when CCB file has completed loading

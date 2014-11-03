@@ -10,5 +10,4 @@
 
 @interface GamePlay : CCNode
 
-
 @end
