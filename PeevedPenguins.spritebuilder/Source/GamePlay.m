@@ -44,7 +44,7 @@ static const float MIN_SPEED = 5.f;
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     
-    //CCScene *level = [CCBReader load:@"Levels/Level1"];
+
     CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
     [_levelNode addChild:level];
     //visualise physics bodys and joints for Debugging
@@ -184,11 +184,12 @@ static const float MIN_SPEED = 5.f;
     CGPoint force = ccpMult(launchDirection, 8000);
     [penguin.physicsBody applyForce:force];
    
-    /*//ensure followed object is visible when playing... like being followed by a camera
+    //ensure followed object is visible when playing... like being followed by a camera
     self.position = ccp(0,0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
-  //  [self runAction:follow];
-    [_contentNode runAction:follow];*/
+   [self runAction:follow];
+   // [_contentNode runAction:follow];
+    
 }
 
 
