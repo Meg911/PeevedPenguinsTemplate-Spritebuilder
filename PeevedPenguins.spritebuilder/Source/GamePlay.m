@@ -20,18 +20,17 @@
 @end
 
 @implementation GamePlay {
-    CCPhysicsNode * _physicsNode;
-    CCNode * _catapultArm;
     
     CCPhysicsBody *_physicsBody;
+    CCPhysicsNode * _physicsNode;
+    CCPhysicsJoint *_mouseJoint;
+    CCPhysicsJoint *_penguinCatapultJoint;
     CCNode * _contentNode;
-    
+    CCNode * _catapultArm;
     CCNode * _levelNode;
     CCNode *_pullbackNode;
     CCNode *_mouseJointNode;
-    CCPhysicsJoint *_mouseJoint;
     Penguin * _currentPenguin;
-    CCPhysicsJoint *_penguinCatapultJoint;
     CCAction *_followPenguin;
 }
 
