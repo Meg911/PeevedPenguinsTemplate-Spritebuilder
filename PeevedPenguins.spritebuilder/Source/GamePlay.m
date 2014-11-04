@@ -51,9 +51,9 @@ static const float MIN_SPEED = 5.f;
   //  _physicsNode.debugDraw = NO;
     
     //nothing will collide with our invisible nodes
-    _pullbackNode.physicsBody.collisionMask = @[];
-    _mouseJointNode.physicsBody.collisionMask = @[];
-    _physicsNode.collisionDelegate = self;
+//    _pullbackNode.physicsBody.collisionMask = @[];
+//    _mouseJointNode.physicsBody.collisionMask = @[];
+//    _physicsNode.collisionDelegate = self;
 }
 
 
@@ -191,7 +191,7 @@ static const float MIN_SPEED = 5.f;
     //ensure followed object is visible when playing... like being followed by a camera
     self.position = ccp(0,0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
-   [self runAction:follow];
+    [self runAction:follow];
    // [_contentNode runAction:follow];
     
 }
@@ -199,11 +199,11 @@ static const float MIN_SPEED = 5.f;
 
 
 #pragma mark - Game Actions
-
+/*
 - (void)retry {
     // reload this level
     [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
-}
+}*/
 #pragma mark - Collision Handling
 /*
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
