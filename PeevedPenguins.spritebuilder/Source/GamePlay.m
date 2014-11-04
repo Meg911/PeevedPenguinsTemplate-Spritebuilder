@@ -14,8 +14,8 @@
 @interface GamePlay(){
    //CCSprite *penguin;
    //CCSprite * seal;
-    CCNode * penguin;
-    CCNode * seal;
+   // CCNode * penguin;
+  //  CCNode * seal;
 }
 @end
 
@@ -106,25 +106,28 @@ static const float MIN_SPEED = 5.f;
              }
 
 }*/
+/*
 
 //- (void)touchMoved:(CCTouch *)touch withEvent:(UIEvent *)event {
 - (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
     // whenever touches move, update the position of the mouseJointNode to the touch position
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     _mouseJointNode.position = touchLocation;
-}
-
+}*/
+/*
 //- (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
 - (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     // when touches end, release the catapult
     [self releaseCatapult];
-}
+ }*/
 
+/*
 - (void)touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
     // when touches are cancelled, release the catapult
     [self releaseCatapult];
-}
-- (void)releaseCatapult {
+ }*/
+
+/*- (void)releaseCatapult {
     if (_mouseJoint != nil) {
         // releases the joint and lets the catpult snap back
         [_mouseJoint invalidate];
@@ -144,10 +147,10 @@ static const float MIN_SPEED = 5.f;
         _followPenguin = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:uiPointsBoundingBox];
         [_contentNode runAction:_followPenguin];
     }
-}
+}*/
 
 
-- (void)sealRemoved:(CCNode *)seal {
+/*- (void)sealRemoved:(CCNode *)seal {
     // load particle effect
     CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
     // place the particle effect on the seals position
@@ -159,8 +162,8 @@ static const float MIN_SPEED = 5.f;
     
     // finally, remove the destroyed seal
     [seal removeFromParent];
-}
-
+}*/
+/*
 - (void)nextAttempt {
     _currentPenguin = nil;
     [_contentNode stopAction:_followPenguin];
@@ -168,7 +171,8 @@ static const float MIN_SPEED = 5.f;
     
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
     [_contentNode runAction:actionMoveTo];
-}
+}*/
+
 
 - (void)launchPenguin {
     // loads the Penguin.ccb we have set up in Spritebuilder
@@ -201,7 +205,7 @@ static const float MIN_SPEED = 5.f;
     [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
 }
 #pragma mark - Collision Handling
-
+/*
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
     float energy = [pair totalKineticEnergy];
     
@@ -211,11 +215,11 @@ static const float MIN_SPEED = 5.f;
             [self sealRemoved:nodeA];
         } key:nodeA];
     }
-}
+}*/
 
 #pragma mark - Update
 
-- (void)update:(CCTime)delta {
+/*- (void)update:(CCTime)delta {
     if (_currentPenguin.launched) {
         // if speed is below minimum speed, assume this attempt is over
         if (ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED) {
@@ -241,5 +245,5 @@ static const float MIN_SPEED = 5.f;
             return;
         }
     }
-}
+}*/
 @end
