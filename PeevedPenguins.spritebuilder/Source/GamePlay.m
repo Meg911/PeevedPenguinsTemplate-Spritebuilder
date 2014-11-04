@@ -20,10 +20,12 @@
 @end
 
 @implementation GamePlay {
-    CCPhysicsBody *_physicsBody;
-    CCNode * _contentNode;
     CCPhysicsNode * _physicsNode;
     CCNode * _catapultArm;
+    
+    CCPhysicsBody *_physicsBody;
+    CCNode * _contentNode;
+    
     CCNode * _levelNode;
     CCNode *_pullbackNode;
     CCNode *_mouseJointNode;
@@ -40,7 +42,8 @@ static const float MIN_SPEED = 5.f;
 - (void)didLoadFromCCB {
     
     // tell this scene to accept touches
-    self.userInteractionEnabled = YES;
+    self.userInteractionEnabled = TRUE;
+    
     //CCScene *level = [CCBReader load:@"Levels/Level1"];
     CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
     [_levelNode addChild:level];
@@ -50,23 +53,20 @@ static const float MIN_SPEED = 5.f;
     //nothing will collide with our invisible nodes
     _pullbackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
-   
     _physicsNode.collisionDelegate = self;
 }
 
 
 
-#pragma mark - Game Actions
 
-- (void)retry {
-    // reload this level
-    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
-}
 #pragma mark - Touch Handling
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    CGPoint touchLocation = [touch locationInNode:_contentNode];
     
+    [self launchPenguin];
+}
+   /*  CGPoint touchLocation = [touch locationInNode:_contentNode];
+
     // start catapult dragging when a touch inside of the catapult arm occurs
     if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
         //if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation)) {
@@ -83,7 +83,8 @@ static const float MIN_SPEED = 5.f;
             
             // create a joint to keep the penguin fixed to the scoop until the catapult is released
             _penguinCatapultJoint = [CCPhysicsJoint connectedPivotJointWithBodyA:_currentPenguin.physicsBody bodyB:_catapultArm.physicsBody anchorA:_currentPenguin.anchorPointInPoints];
-        /*// move the mouseJointNode to the touch position
+        
+  // move the mouseJointNode to the touch position
         _mouseJointNode.position = touchLocation;
         
         // setup a spring joint between the mouseJointNode and the catapultArm
@@ -102,9 +103,9 @@ static const float MIN_SPEED = 5.f;
         
         // create a joint to keep the penguin fixed to the scoop until the catapult is released
         _penguinCatapultJoint = [CCPhysicsJoint connectedPivotJointWithBodyA:_currentPenguin.physicsBody bodyB:_catapultArm.physicsBody anchorA:_currentPenguin.anchorPointInPoints];
-         */
-    }
-}
+             }
+
+}*/
 
 //- (void)touchMoved:(CCTouch *)touch withEvent:(UIEvent *)event {
 - (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -169,27 +170,35 @@ static const float MIN_SPEED = 5.f;
     [_contentNode runAction:actionMoveTo];
 }
 
-
 - (void)launchPenguin {
     // loads the Penguin.ccb we have set up in Spritebuilder
-    CCNode* penguin1 = [CCBReader load:@"Penguin"];
+    CCNode* penguin = [CCBReader load:@"Penguin"];
     // position the penguin at the bowl of the catapult
-    penguin1.position = ccpAdd(_catapultArm.position, ccp(16, 50));
+    penguin.position = ccpAdd(_catapultArm.position, ccp(16, 50));
     
     // add the penguin to the physicsNode of this scene (because it has physics enabled)
-    [_physicsNode addChild:penguin1];
+    [_physicsNode addChild:penguin];
     
     // manually create & apply a force to launch the penguin
     CGPoint launchDirection = ccp(1, 0);
     CGPoint force = ccpMult(launchDirection, 8000);
-    [penguin1.physicsBody applyForce:force];
-    //ensure followed object is visible when playing... like being followed by a camera
+    [penguin.physicsBody applyForce:force];
+   
+    /*//ensure followed object is visible when playing... like being followed by a camera
     self.position = ccp(0,0);
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin1 worldBoundary:self.boundingBox];
+    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
   //  [self runAction:follow];
-    [_contentNode runAction:follow];
+    [_contentNode runAction:follow];*/
 }
 
+
+
+#pragma mark - Game Actions
+
+- (void)retry {
+    // reload this level
+    [[CCDirector sharedDirector]replaceScene:[CCBReader loadAsScene:@"GamePlay"]];
+}
 #pragma mark - Collision Handling
 
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
